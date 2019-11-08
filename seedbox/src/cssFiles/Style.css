@@ -1,0 +1,54 @@
+html, body {
+	background-color: white;
+}
+
+body {
+	padding: 20px
+}
+
+
+.Login #logo {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 30%;
+}
+.Login button:before {
+	background: url("../images/spotifyLogo.png") no-repeat scroll center center / 100% auto rgba(0, 0, 0, 0);
+    content: "";
+    display: inline-block;
+    color: #fff;
+    height: 30px;
+    margin-right: 13px;
+    position: relative;
+    top: -2px;
+    vertical-align: middle;
+    width: 30px;
+}
+.Login button{
+	display: block;
+	margin-top: 50px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #51C768; /* Green */
+	border: none;
+	color: white;
+	padding: 20px;
+	text-decoration: none;
+	cursor: pointer;
+	border-radius: 65px;
+	font-family:'Courier New', Courier, monospace;
+	font-size: 30px;
+	line-height: 22px;
+	text-align: center;
+	
+	}
+
+.Login h1{
+	margin-top: 50px;
+	text-align: center;
+	font-size: 120px;
+	color: #8B9358;
+	font-family: 'Courier New', Courier, monospace;
+
+}

@@ -1,4 +1,20 @@
-import React, {Component} from 'react';
+
+import React, { Component } from 'react';
+import Router from '../src/config/Router';
+
+class App extends Component {
+
+  render() {
+    return (
+     <Router/>
+    );
+  }
+}
+
+export default App;
+
+
+/*import React, {Component} from 'react';
 import querystring from 'querystring';
 import 'reset-css/reset.css'
 import './App.css';
@@ -149,7 +165,7 @@ class App extends Component {
             window.location = window.location.href.includes('localhost')
               ? 'http://localhost:8888/login'
               : 'https://fummi-backend.herokuapp.com/login'
-          }}>Login to spotify</button>
+          }}>Connect with spotify</button>
       }
       </div>
     );
@@ -157,3 +173,4 @@ class App extends Component {
 }
 
 export default App;
+*/
