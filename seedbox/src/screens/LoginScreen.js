@@ -76,5 +76,4 @@ export default class Login extends Component {
          songs: item.trackDatas.slice(0,3),
          imageUrl: item.images[0].url}))}))
   }
-
 }
