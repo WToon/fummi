@@ -4,8 +4,10 @@ import PlaylistCounter from './PlaylistCounter'
 import HoursCounter from './HoursCounter'
 import Loading from './Loading'
 import LoginScreen from './LoginScreen'
+import App from './App'
 
 export {
+  App,
   LoginScreen,
   Loading,
   Filter,

@@ -16,7 +16,7 @@ app.get('/login', function(req, res) {
       client_id: client_id,
       scope: 'user-read-private user-read-email',
       redirect_uri,
-      show_dialog: true
+      // show_dialog: true
     }))
 })
 

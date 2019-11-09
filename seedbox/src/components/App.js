@@ -1,16 +1,8 @@
-// Import dependencies
 import React, {Component} from 'react';
 import querystring from 'querystring';
 import 'reset-css/reset.css'
-import './App.css';
-import {defaultStyle} from './constants'
-import {
-  HoursCounter,
-  Filter,
-  Playlist,
-  PlaylistCounter,
-  LoginScreen,
-  Loading} from './components'
+import {defaultStyle, darkGray} from '../constants'
+import {HoursCounter, Filter, Playlist, PlaylistCounter, LoginScreen, Loading} from '.'
 
 class App extends Component {
   constructor() {
@@ -74,7 +66,7 @@ class App extends Component {
         : []
    
     return (
-      <div className="App">
+      <div className="App" style={{backgroundColor: darkGray, padding: '20' }}>
       {
         this.state.accessToken ?
           this.state.user ? 
@@ -92,10 +84,10 @@ class App extends Component {
               {playlistsToRender.map(playlist => <Playlist key={playlist.name} playlist={playlist} />)}
             </div> 
           :
-            <Loading/>
+            <Loading />
         :
-          <LoginScreen/>
-      }
+          <LoginScreen />
+        }
       </div>
     );
   }

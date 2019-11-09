@@ -4,19 +4,20 @@ import PropTypes from 'prop-types'
 import {defaultStyle, green} from '../constants'
 
 const Loading = ({type, color, text, width, height}) => 
-  <div style={{...defaultStyle, margin: 'auto'}}>
-    <ReactLoading 
-      type={type} 
-      color={color}
-      width={width}
-      height={height}
-    />
-    <h1>{text}</h1>
+  <div style={{textAlign: 'center', padding: '20px', margin: 'auto'}}>
+    <div style={{...defaultStyle, display: 'inline-block'}}>
+      <ReactLoading 
+        type={type} 
+        color={color}
+        width={width}
+        height={height}
+      />
+      <h1>{text}</h1>
+    </div>
   </div>
 
-
 Loading.defaultProps = {
-  type: 'bars',
+  type: 'spinningBubbles',
   color: green,
   text: '',
   width: 200,
