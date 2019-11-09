@@ -27,8 +27,8 @@ Loading.propTypes = {
   type: PropTypes.string,
   color: PropTypes.string,
   text: PropTypes.string,
-  width: PropTypes.symbol,
-  height: PropTypes.symbol
+  width: PropTypes.number,
+  height: PropTypes.number
 }
 
 export default Loading

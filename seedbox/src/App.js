@@ -4,7 +4,13 @@ import querystring from 'querystring';
 import 'reset-css/reset.css'
 import './App.css';
 import {defaultStyle} from './constants'
-import {HoursCounter, Filter, Playlist, PlaylistCounter} from './components'
+import {
+  HoursCounter,
+  Filter,
+  Playlist,
+  PlaylistCounter,
+  LoginScreen,
+  Loading} from './components'
 
 class App extends Component {
   constructor() {
@@ -18,8 +24,9 @@ class App extends Component {
     let parsed = querystring.parse(window.location.search.substring(1))
     let accessToken = parsed.access_token
     let headers = {headers: {'Authorization': 'Bearer '+ accessToken}}
-
-    if (!accessToken)
+    this.setState({accessToken})
+    
+    if (! accessToken)
       return
 
     fetch('https://api.spotify.com/v1/me', headers)
@@ -45,18 +52,18 @@ class App extends Component {
                   duration: trackData.duration_ms/1000
                 }))
             })
-            console.log(playlists)
             return playlists
         })
         return playlistPromise 
       })
-      .then(playlists => this.setState({playlists: playlists.map(item => (
-        { key: item.name,
-          name: item.name,
-          songs: item.trackDatas.slice(0,3),
-          imageUrl: item.images[0].url}))}))    
+      .then(playlists => {
+        this.setState({playlists: playlists.map(item => (
+          { name: item.name,
+            songs: item.trackDatas.slice(0,3),
+            imageUrl: item.images[0].url}))})
+        }
+      )
   }
-  
 
   render() {
     let playlistsToRender = 
@@ -69,28 +76,25 @@ class App extends Component {
     return (
       <div className="App">
       {
-        this.state.user ? 
-          <div>
-            <h1 style={{...defaultStyle,
-               marginTop:'20px', 
-               fontSize:'54px',
-               marginBottom:'20px'}}>
-              {this.state.user.name}'s playlists
-            </h1>
-            <PlaylistCounter  playlists={playlistsToRender}/>
-            <HoursCounter     playlists={playlistsToRender}/>
-            <Filter onTextChange={text => {this.setState({filterString: text})}}/>
+        this.state.accessToken ?
+          this.state.user ? 
+            <div>
+              <h1 style={{...defaultStyle,
+                marginTop:'20px', 
+                fontSize:'54px',
+                marginBottom:'20px'}}>
+                {this.state.user.name}'s playlists
+              </h1>
+              <PlaylistCounter  playlists={playlistsToRender}/>
+              <HoursCounter     playlists={playlistsToRender}/>
+              <Filter onTextChange={text => {this.setState({filterString: text})}}/>
 
-            {playlistsToRender.map(playlist => <Playlist playlist={playlist} />)}
-          </div> 
+              {playlistsToRender.map(playlist => <Playlist key={playlist.name} playlist={playlist} />)}
+            </div> 
+          :
+            <Loading/>
         :
-        <button 
-          onClick={ () => {
-            window.location = window.location.href.includes('localhost')
-              ? 'http://localhost:8888/login'
-              : 'https://fummi-backend.herokuapp.com/login'}}
-        >Login to spotify
-        </button>
+          <LoginScreen/>
       }
       </div>
     );
