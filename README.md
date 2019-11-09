@@ -25,4 +25,4 @@ Clone the repository
 
 * **Toon Willemot** - *KULeuven*
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/WToon/fummi/graphs/contributors) who participated in this project.
