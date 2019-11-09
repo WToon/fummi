@@ -1,73 +1,10 @@
+// Import dependencies
 import React, {Component} from 'react';
 import querystring from 'querystring';
 import 'reset-css/reset.css'
 import './App.css';
-
-let defaultStyle = {
-  color: '#b3b3b3',
-  'font-family': '"Console", Console, monospace'
-}
-
-class PlaylistCounter extends Component {
-  render() {
-    return (
-      <div style={{width: '40%', display: 'inline-block', marginBottom:'10px'}}>
-        <h2 style={defaultStyle}>
-        {this.props.playlists.length} playlists</h2>
-      </div>
-    )
-  }
-}
-
-class HoursCounter extends Component {
-  render() {
-    let allSongs = this.props.playlists.reduce((songs, playlist) => {
-      return songs.concat(playlist.songs)
-    } , [])
-
-    let totalDuration = allSongs.reduce((sum, song) => {
-      return sum + song.duration
-    }, 0)
-
-    let hourCounterStyle = {...defaultStyle,
-      width: '40%',
-      display: 'inline-block',
-      marginBottom:'10px',
-      color: '#1db954'
-    }
-
-    return (
-      <div style={hourCounterStyle}>
-        <h2>{Math.round(totalDuration/60)} Hours</h2>
-      </div>
-    )
-  }
-}
-
-class Filter extends Component {
-  render() {
-    return (
-      <div style={{...defaultStyle, marginBottom:'10px'}}>
-        <input type="text" onKeyUp={e => 
-          this.props.onTextChange(e.target.value)}/>
-      </div>
-    )
-  }
-}
-
-class Playlist extends Component {
-  render() {
-    return (
-      <div style={{...defaultStyle, width:'25%', display: 'inline-block', marginInline:'15px'}}>
-        <h3 style={{marginTop:'15px'}}>{this.props.playlist.name}</h3>
-        <img src={this.props.playlist.imageUrl} style={{height:'60px', marginBottom:'5px', marginTop:'5px'}} alt='true' />
-        <ul style={{'list-style-type':'circle', marginTop:'10px'}}>
-          {this.props.playlist.songs.map(song => <li style={{paddingTop:'5px'}}>{song.name}</li>)}
-        </ul>
-      </div>
-    )
-  }
-}
+import {defaultStyle} from './constants'
+import {HoursCounter, Filter, Playlist, PlaylistCounter} from './components'
 
 class App extends Component {
   constructor() {
@@ -114,10 +51,12 @@ class App extends Component {
         return playlistPromise 
       })
       .then(playlists => this.setState({playlists: playlists.map(item => (
-        {name: item.name,
-         songs: item.trackDatas.slice(0,3),
-         imageUrl: item.images[0].url}))}))
+        { key: item.name,
+          name: item.name,
+          songs: item.trackDatas.slice(0,3),
+          imageUrl: item.images[0].url}))}))    
   }
+  
 
   render() {
     let playlistsToRender = 
@@ -145,11 +84,13 @@ class App extends Component {
             {playlistsToRender.map(playlist => <Playlist playlist={playlist} />)}
           </div> 
         :
-          <button onClick={ () => {
+        <button 
+          onClick={ () => {
             window.location = window.location.href.includes('localhost')
               ? 'http://localhost:8888/login'
-              : 'https://fummi-backend.herokuapp.com/login'
-          }}>Login to spotify</button>
+              : 'https://fummi-backend.herokuapp.com/login'}}
+        >Login to spotify
+        </button>
       }
       </div>
     );
