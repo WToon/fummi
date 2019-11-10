@@ -1,11 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {Button} from '.'
 
+import {defaultStyle} from '../constants'
 
-class LoginScreen extends Component {
-  render() { 
-    return (
-      <div >
+const LoginPage = () => 
+      <div style={defaultStyle} >
         <Button
           onClick={ () => {
             window.location = window.location.href.includes('localhost')
@@ -14,8 +13,5 @@ class LoginScreen extends Component {
         >Login to spotify
         </Button>
       </div>
-    )
-  }
-}
- 
-export default LoginScreen;
+
+export default LoginPage;

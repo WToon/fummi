@@ -3,7 +3,7 @@ import ReactLoading from "react-loading";
 import PropTypes from 'prop-types'
 import {defaultStyle, green} from '../constants'
 
-const Loading = ({type, color, text, width, height}) => 
+const Loading = ({type, color, children, width, height}) => 
   <div style={{textAlign: 'center', padding: '20px', margin: 'auto'}}>
     <div style={{...defaultStyle, display: 'inline-block'}}>
       <ReactLoading 
@@ -12,7 +12,7 @@ const Loading = ({type, color, text, width, height}) =>
         width={width}
         height={height}
       />
-      <h1>{text}</h1>
+      <h1>{children}</h1>
     </div>
   </div>
 
