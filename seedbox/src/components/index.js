@@ -5,8 +5,11 @@ import HoursCounter from './HoursCounter'
 import Loading from './Loading'
 import LoginScreen from './LoginScreen'
 import App from './App'
+import Button from './Button'
+
 
 export {
+  Button,
   App,
   LoginScreen,
   Loading,
