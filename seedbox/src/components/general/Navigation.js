@@ -29,6 +29,8 @@ const MainNavBar = () =>
     <StyledLink to="/about"   >About</StyledLink>
     <StyledLink to="/profile" >My profile</StyledLink>
     <StyledLink to="/create"  >Create playlist</StyledLink>
+    <StyledLink to="/layout"  >layout</StyledLink>
+
   </StyledUl>
 
 export default MainNavBar;

@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux'
 import { tokenAction } from '../actions'
 
 import { UserProfilePage, CreationPage, Navigation, HomePage, AboutPage, LoginPage } from '.'
-
+import LayoutPage from "../components/layoutPage/LayoutPage"
 function App() {
 
   let parsed = querystring.parse(window.location.search.substring(1))
@@ -26,6 +26,8 @@ function App() {
               <Route path="/about" component={AboutPage} />
               <Route path="/create" component={CreationPage} />
               <Route path="/profile" component={UserProfilePage} />
+              <Route path="/layout" component={LayoutPage} />
+
             </Switch>
           </>
           :
