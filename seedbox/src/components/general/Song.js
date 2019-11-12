@@ -1,9 +1,8 @@
 import React from 'react';
 
-const Song = (SongData) => {
-  <div>
+const Song = songData => 
+  <div style={{backgroundColor:'yellow'}}>
     Display SongData here
   </div>
-}
 
 export default Song

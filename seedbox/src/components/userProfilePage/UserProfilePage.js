@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 
-import { userDataAction } from '../actions';
+import { userDataAction } from '../../actions';
 
 
 const UserProfile = () => {

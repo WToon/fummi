@@ -1,9 +1,9 @@
 import React from 'react';
-import {Button} from '.'
+import Button from '../general/Button'
 
 import {defaultStyle} from '../constants'
 
-const LoginPage = () => 
+const LoginPage = () =>
       <div style={defaultStyle} >
         <Button
           onClick={ () => {
