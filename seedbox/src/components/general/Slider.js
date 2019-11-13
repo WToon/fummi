@@ -11,36 +11,38 @@ padding: 15px;
 
 
 const sliderThumbStyles = (props) => (`
-  background-color: black;
-  width: 25px;
-  height: 25px;
-  background : ${props.color};
-  cursor : pointer;
-  outline : 5px solid black;
-  opacity: ${props.opacity}
-  -webkit-transition: .2s;
-  transistion: opacity .2s;
+    border: 4px solid #12A910;
+    height: 14px;
+    width: 14px;
+    border-radius: 100%;
+    background: #ffffff;
+    cursor: pointer;
+    box-shadow:  -2px 1px 8px #000000, calc(-100vw - 7px) 0 0 100vw #12A910;
+
 `);
 
-
-
 const Styles = styled.div`
-display: flex;
-color: black;
-margin-bottem: 15px;
-width: 20%;
+
 
 .slider{
   flex :6;
   -webkit-appearance:none;
-  height: 15px;
-  background: #efefef;
+  height: 5px;
   outline: none;
+  margin-bottem: 15px;
+  width: 20%;
 
-  &::-webkit-slider-thumb{
-    -webkit-appearance:none;
-    appearance:none;
+  &::-webkit-slider-runnable-track {
+    background: white;
+    overflow: hidden;
+    border-radius: 25px;
+    height: auto;
+    box-shadow: 2px 2px 10px black;
+  }
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
     ${props => sliderThumbStyles(props)}
+
   }
   &::-moz-range-thumb{
     ${props => sliderThumbStyles(props)}
