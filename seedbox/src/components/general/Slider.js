@@ -11,33 +11,32 @@ padding: 15px;
 
 
 const sliderThumbStyles = (props) => (`
-    border: 4px solid #12A910;
+    border: 4px solid white;
     height: 14px;
     width: 14px;
     border-radius: 100%;
     background: #ffffff;
     cursor: pointer;
-    box-shadow:  -2px 1px 8px #000000, calc(-100vw - 7px) 0 0 100vw #12A910;
+    box-shadow:  -2px 1px 8px #000000, calc(-100vw - 7px) 0 0 100vw white;
 
 `);
 
 const Styles = styled.div`
 
-
+ 
 .slider{
   flex :6;
   -webkit-appearance:none;
   height: 5px;
   outline: none;
   margin-bottem: 15px;
-  width: 20%;
+  width: 250px;
 
   &::-webkit-slider-runnable-track {
-    background: white;
+    background: black;
     overflow: hidden;
     border-radius: 25px;
     height: auto;
-    box-shadow: 2px 2px 10px black;
   }
   &::-webkit-slider-thumb {
     -webkit-appearance: none;
