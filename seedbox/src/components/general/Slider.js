@@ -11,11 +11,12 @@ padding: 15px;
 
 
 const sliderThumbStyles = (props) => (`
+
     border: 4px solid white;
     height: 14px;
     width: 14px;
     border-radius: 100%;
-    background: #ffffff;
+    background: white;
     cursor: pointer;
     box-shadow:  -2px 1px 8px #000000, calc(-100vw - 7px) 0 0 100vw white;
 
@@ -40,6 +41,7 @@ const Styles = styled.div`
   }
   &::-webkit-slider-thumb {
     -webkit-appearance: none;
+    
     ${props => sliderThumbStyles(props)}
 
   }
