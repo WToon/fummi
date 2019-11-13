@@ -34,7 +34,6 @@ width: 20%;
   flex :6;
   -webkit-appearance:none;
   height: 15px;
-  border-radius: 5px;
   background: #efefef;
   outline: none;
 
