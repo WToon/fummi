@@ -32,7 +32,7 @@ transition: opacity .2s;
 
 border-style: solid;
 border-radius: 25px;
-border-color: rgb(179, 178, 177);
+border-color: whitesmoke;
 border-width: 1px;
 
 &::hover {
@@ -63,7 +63,7 @@ border-width: 1px;
 }
 
 &::-webkit-slider-thumb:hover {
-  background: #b07ac3fc; /* Green background */
+  background: rgba(53, 53, 53, 1); /* Green background */
 }
 `
 
@@ -78,7 +78,7 @@ class Slider extends Component {
     const percentageAdjustment = pixelAdjustment / 5.76;
     const pixelValue = parseInt(this.state.value) + percentageAdjustment;
     const divStyle = {
-      background:'linear-gradient(90deg, rgba(156, 240, 225) ' + pixelValue + '%, rgba(53, 53, 53, 1) ' + pixelValue + '%)'
+      background:'linear-gradient(90deg, #1DB854 ' + pixelValue + '%, rgba(53, 53, 53, 1) ' + pixelValue + '%)'
     };
     return (
       <>
