@@ -13,18 +13,6 @@ padding: 15px;
 `
 
 
-const sliderThumbStyles = (props) => (`
-
-    border: 4px solid white;
-    height: 14px;
-    width: 14px;
-    border-radius: 100%;
-    background: white;
-    cursor: pointer;
-    box-shadow:  -2px 1px 8px #000000, calc(-100vw - 7px) 0 0 100vw white;
-
-`);
-
 const Slidecontainer = styled.div`
     margin-bottom: 10px;
     width: 220px;
@@ -83,13 +71,14 @@ border-width: 1px;
 class Slider extends Component {
   state = { value: 50 }
 
+  
 
   render() {
     const pixelAdjustment = -0.25* this.state.value + 12.5;
     const percentageAdjustment = pixelAdjustment / 5.76;
     const pixelValue = parseInt(this.state.value) + percentageAdjustment;
     const divStyle = {
-      background:'linear-gradient(90deg, rgba(156, 240, 225) ' +  ' ' + pixelValue + '%, rgba(53, 53, 53, 1) ' + pixelValue + '%)'
+      background:'linear-gradient(90deg, rgba(156, 240, 225) ' + pixelValue + '%, rgba(53, 53, 53, 1) ' + pixelValue + '%)'
     };
     return (
       <>
