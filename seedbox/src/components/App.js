@@ -7,6 +7,10 @@ import { tokenAction } from '../actions'
 
 import { UserProfilePage, CreationPage, Navigation, HomePage, AboutPage, LoginPage } from '.'
 import LayoutPage from "../components/layoutPage/LayoutPage"
+
+
+
+
 function App() {
 
   let parsed = querystring.parse(window.location.search.substring(1))
@@ -15,8 +19,10 @@ function App() {
   if (accessToken)
     dispatch(tokenAction(accessToken))
 
+
+  
   return (
-    <Router>
+    <Router >
       {
         accessToken ?
           <>

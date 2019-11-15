@@ -7,6 +7,7 @@ import LoginPage from './loginPage/LoginPage'
 import AboutPage from './aboutPage/AboutPage'
 import HomePage from './homePage/HomePage'
 import UserProfilePage from './userProfilePage/UserProfilePage'
+import LayoutPage from './layoutPage/LayoutPage'
 import CreationPage from './creationPage/CreationPage'
 import Slider from './general/Slider'
 
@@ -22,4 +23,5 @@ export {
   App,
   LoginScreen,
   Loading,
+  LayoutPage
 }

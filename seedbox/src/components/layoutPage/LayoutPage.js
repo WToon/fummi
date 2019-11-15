@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components'
+import AtrributeSelector from '../creationPage/AtrributeSelector';
 
 
 
@@ -17,7 +18,7 @@ const Parent = styled.div`
 
 const Div1 = styled.div`
   background-color: blue;
-  width: 10%;
+  width: 15%;
   height: 100%;
   float:left;
 `

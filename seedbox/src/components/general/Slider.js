@@ -15,13 +15,13 @@ padding: 15px;
 
 const Slidecontainer = styled.div`
     margin-bottom: 10px;
-    width: 220px;
+    width: 95%;
 `
 
 const SliderInput = styled.input`
 -webkit-appearance: none;  /* Override default CSS styles */
 appearance: none;
-width: 200px;
+width: 95%;
 height: 15px; /* Specified height */
 /*background: rgba(53, 53, 53, 1); !* Grey background *!*/
 background: linear-gradient(90deg, #57ab68 50%, rgba(53, 53, 53, 1) 50%);
