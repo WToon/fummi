@@ -5,6 +5,7 @@ import home from '../../images/home.png'
 import play from '../../images/play.png'
 import profile from '../../images/profile.png'
 import e from '../../images/extra.png'
+import logo from "../../images/logo.png"
 
 const StyledLink = (props) => (`
 
@@ -23,12 +24,25 @@ font-family: sans-serif;
   
   `);
 
+/**
 
+:after {
+    content: "";
+    background-image:url(${logo}) ;
+    background-size: 100% 100%;
+    display: inline-block;
+  
+    height: 60px;
+    width:60px;
+  
+  }
+ **/
   const StyledLinkLogo = styled(Link)`
+  ${props => StyledLink(props)}
 
   :before {
-    content: url("https://cdn0.iconfinder.com/data/icons/social-network-24/512/Spotify-128.png");
-  }
+    content: url(https://cdn0.iconfinder.com/data/icons/social-network-24/512/Spotify-128.png ) ;
+  
 `;
 
 const StyledLinkHome = styled(Link)`
@@ -37,8 +51,6 @@ ${props => StyledLink(props)}
   :before {
     content: url(${home});
   }
-
-
 `;
 
 

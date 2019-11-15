@@ -1,10 +1,29 @@
 import React from 'react';
-import Button from '../general/Button'
+import Button from '../general/LoginButton'
+import logo from "../../images/logo.png"
+import styled from 'styled-components'
 
-import {defaultStyle} from '../constants'
+
+const H1 = styled.h1`
+margin-top: 50px;
+text-align: center;
+font-size: 120px;
+color: #8B9358;
+font-family: 'Courier New', Courier, monospace;
+`
+const LogoImage = styled.img`
+  display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 30%;
+`
+
 
 const LoginPage = () =>
-      <div style={defaultStyle} >
+      <div >
+       <LogoImage id="logo" src={logo} alt="fireSpot" />
+       <H1>SeedBox</H1>
+
         <Button
           onClick={ () => {
             window.location = window.location.href.includes('localhost')
