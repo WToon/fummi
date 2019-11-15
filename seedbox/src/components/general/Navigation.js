@@ -19,6 +19,7 @@ font-family: sans-serif;
   text-decoration: none;
   margin-left: 10px;
   margin-top:20px;
+
   :hover {
     color: #1DB854;
   }
@@ -43,11 +44,12 @@ font-family: sans-serif;
   display: block;
   margin-left: auto;
   margin-right: auto;
-
   :before {
     content: url(https://cdn0.iconfinder.com/data/icons/social-network-24/512/Spotify-128.png ) ;
   
 `;
+
+
 
 
 const StyledLinkOpen = styled(Link)`
@@ -136,6 +138,7 @@ class Navigation extends Component {
   };
 
   render() {
+
     
 const StyledUl = styled.ul`
 height:100%;
@@ -144,7 +147,8 @@ display: flex;
 background-color: #212121; 
 font-family: "Console", Console, monospace;
 font-size: 30px;
-border-right: 3px solid ${  this.state.clicked ? '#1DB854' : ''};
+
+${  this.state.clicked ? 'border: 3px solid transparent;-moz-border-image: -moz-linear-gradient(top, #212121 0%, #1DB854 100%);-webkit-border-image: -webkit-linear-gradient(top, #212121 0%, #1DB854 100%);border-image: linear-gradient(to right, #212121 0%, #1DB854 100%);border-image-slice: 1;' : ''};
 height: 100%;
 width: ${  this.state.clicked ? '15%' : '0%'};
 position: fixed;
@@ -152,8 +156,7 @@ z-index: 1;
 top: 0;
 left: 0;
 overflow-x: hidden;
-transition: .5s ease;
-
+transition-duration: 1s
 `
     return (
 
