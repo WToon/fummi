@@ -39,7 +39,7 @@ font-family: sans-serif;
   
   }
  **/
-  const StyledLinkLogo = styled(Link)`
+const StyledLinkLogo = styled(Link)`
 
   display: block;
   margin-left: auto;
@@ -54,13 +54,15 @@ font-family: sans-serif;
 
 const StyledLinkOpen = styled(Link)`
 ${props => StyledLink(props)}
-    font-size:30px;
+    font-size:40px;
     padding:20px;
     cursor:pointer;
 `;
 
 const StyledLinkClose = styled(Link)`
 ${props => StyledLink(props)}
+
+
     font-size:30px;
     cursor:pointer;
     position: absolute;
@@ -123,6 +125,8 @@ ${props => StyledLink(props)}
   bottom: 30px;
 `;
 
+
+
 class Navigation extends Component {
   constructor(props) {
     super(props);
@@ -139,15 +143,11 @@ class Navigation extends Component {
 
   render() {
 
-    
-const StyledUl = styled.ul`
+    const StyledUl = styled.ul`
 height:100%;
 flex-direction: column
 display: flex;
 background-color: #212121; 
-font-family: "Console", Console, monospace;
-font-size: 30px;
-
 ${  this.state.clicked ? 'border: 3px solid transparent;-moz-border-image: -moz-linear-gradient(top, #212121 0%, #1DB854 100%);-webkit-border-image: -webkit-linear-gradient(top, #212121 0%, #1DB854 100%);border-image: linear-gradient(to right, #212121 0%, #1DB854 100%);border-image-slice: 1;' : ''};
 height: 100%;
 width: ${  this.state.clicked ? '15%' : '0%'};
@@ -156,29 +156,30 @@ z-index: 1;
 top: 0;
 left: 0;
 overflow-x: hidden;
-transition-duration: 1s
+transition: all 1s; //for example
+
 `
     return (
 
-      
-    <StyledDiv>
-  <StyledLinkOpen 
-     clicked={this.state.clicked}
-     onClick={this.myClick}> &#9776;</StyledLinkOpen>
 
-  <StyledUl >
-    <StyledLinkClose onClick={() => this.setState({ clicked: false })} > &times;</StyledLinkClose>
-    <StyledLinkLogo to="/"        > </StyledLinkLogo>
-    <StyledLinkHome to="/"        > Home</StyledLinkHome>
-    <StyledLinkAbout to="/about"   > About</StyledLinkAbout>
-    <StyledLinkProfile to="/profile" > My profile</StyledLinkProfile>
-    <StyledLinkPlaylist to="/create"  > Create playlist</StyledLinkPlaylist>
-    <StyledLinkLayout to="/layout"  > layout</StyledLinkLayout>
-    <StyledLinkLogout to=""  > Logout</StyledLinkLogout>
+      <StyledDiv>
+        <StyledLinkOpen
+          clicked={this.state.clicked}
+          onClick={this.myClick}> &#9776;</StyledLinkOpen>
 
-  </StyledUl>
-  </StyledDiv>
-  );
+        <StyledUl >
+          <StyledLinkClose onClick={() => this.setState({ clicked: false })} > &times;</StyledLinkClose>
+          <StyledLinkLogo to="/"        > </StyledLinkLogo>
+          <StyledLinkHome to="/"        > Home</StyledLinkHome>
+          <StyledLinkAbout to="/about"   > About</StyledLinkAbout>
+          <StyledLinkProfile to="/profile" > My profile</StyledLinkProfile>
+          <StyledLinkPlaylist to="/create"  > Create playlist</StyledLinkPlaylist>
+          <StyledLinkLayout to="/layout"  > layout</StyledLinkLayout>
+          <StyledLinkLogout   > Logout</StyledLinkLogout>
+        </StyledUl>
+
+      </StyledDiv>
+    );
   }
 }
 export default Navigation;
